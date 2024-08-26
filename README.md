@@ -1,5 +1,5 @@
 <div>
- <img src="https://github.com/user-attachments/assets/08676658-bf7a-4492-a95f-0b31962c0f67" width="500"/>
+ <img src="https://github.com/user-attachments/assets/34490945-20ba-4001-9a43-61bbd026f45f" width="500"/>
 </div>
 
 # Web Scraper 🤖
