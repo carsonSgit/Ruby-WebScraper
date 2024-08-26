@@ -7,8 +7,8 @@ html = URI.open(url)
 
 doc = Nokogiri::HTML(html)
 
-headlines = doc.css('div')
+links = doc.css('a')
 
-headlines.each_with_index do |headline, index|
-  puts "#{index + 1}. #{headline.text.strip}"
+links.each_with_index do |link, index|
+    puts "#{index + 1}. #{link['href']}"
 end
