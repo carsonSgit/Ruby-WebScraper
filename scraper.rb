@@ -15,7 +15,7 @@ begin
   CSV.open('links.csv', 'wb') do |csv|
     csv << ['Index', 'Title', 'Link']
     filtered_links.each_with_index do |link, index|
-      title = link.text.strip
+      title = link.text.strip.empty? ? "No Title" : link.text.strip
       absolute_link = URI.join(url, link['href']).to_s
       csv << [index + 1, title, absolute_link]
     end
