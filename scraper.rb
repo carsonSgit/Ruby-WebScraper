@@ -20,3 +20,5 @@ CSV.open('links.csv', 'wb') do |csv|
       csv << [index + 1, title, absolute_link]
     end
   end
+
+puts "Links saved to links.csv"
