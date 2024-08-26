@@ -4,6 +4,7 @@ require 'csv'
 require 'uri'
 
 url = ARGV[0] || gets.chomp
+output_file = ARGV[1] || 'links.csv'
 
 begin
   html = URI.open(url, "User-Agent" => "Mozilla/5.0")
@@ -12,7 +13,9 @@ begin
   links = doc.css('a')
   filtered_links = links.select { |link| link['href'] =~ /^http/ }
 
-  CSV.open('links.csv', 'wb') do |csv|
+  puts "Found #{filtered_links.size} links."
+
+  CSV.open(output_file, 'wb') do |csv|
     csv << ['Index', 'Title', 'Link']
     filtered_links.each_with_index do |link, index|
       title = link.text.strip.empty? ? "No Title" : link.text.strip
@@ -21,7 +24,7 @@ begin
     end
   end
 
-  puts "Links saved to links.csv"
+  puts "Links saved to #{output_file}"
 
 rescue OpenURI::HTTPError => e
   puts "HTTP Error: #{e.message}"
