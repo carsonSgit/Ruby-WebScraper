@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'csv'
 
-url = gets.chomp
+url = ARGV[0] || gets.chomp
 
 html = URI.open(url)
 
