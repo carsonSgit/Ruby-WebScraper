@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-url = 'https://www.bbc.com/news'
+url = gets.chomp
 
 html = URI.open(url)
 
