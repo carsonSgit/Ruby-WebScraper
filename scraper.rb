@@ -10,8 +10,10 @@ doc = Nokogiri::HTML(html)
 
 links = doc.css('a')
 
+filtered_links = links.select { |link| link['href'] =~ /^http/ }
+
 CSV.open('links.csv', 'wb') do |csv|
-    links.each_with_index do |link, index|
+    filtered_links.each_with_index do |link, index|
         csv << [index + 1, link['href']]
     end
 end
