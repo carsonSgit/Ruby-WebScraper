@@ -3,6 +3,8 @@ require 'open-uri'
 require 'csv'
 require 'uri'
 
+puts "Please input the URL you want to scrape: "
+
 url = ARGV[0] || gets.chomp
 output_file = ARGV[1] || 'links.csv'
 
@@ -13,8 +15,6 @@ begin
   links = doc.css('a')
   filtered_links = links.select { |link| link['href'] =~ /^http/ }
 
-  puts "Found #{filtered_links.size} links."
-
   CSV.open(output_file, 'wb') do |csv|
     csv << ['Index', 'Title', 'Link']
     filtered_links.each_with_index do |link, index|
@@ -24,10 +24,13 @@ begin
     end
   end
 
+  puts "Total links found: #{filtered_links.size}"
   puts "Links saved to #{output_file}"
 
 rescue OpenURI::HTTPError => e
-  puts "HTTP Error: #{e.message}"
+    puts "HTTP Error: #{e.message}"
+rescue CSV::MalformedCSVError => e
+    puts "CSV Error: #{e.message}"
 rescue StandardError => e
-  puts "An error occurred: #{e.message}"
+    puts "An error occurred: #{e.message}"
 end
