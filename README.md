@@ -5,13 +5,15 @@
 # Web Scraper 🤖
 Learning Ruby one step at a time...
 
-> A wise man once told me, "Learn Ruby, you'll like it."
+> [!IMPORTANT]
+> This is my introduction to Ruby! I have experience with similar languages (i.e. `Python`, `Kotlin`, `JavaScript`, etc.) but have never even seen the syntax before making this, so it may not be my best work 😢.
+>> A wise man once told me, "Learn Ruby, you'll like it."
 
-## Overview
+## Overview 🌍
 
 This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks** from the given `URL`, and outputs them to a **CSV**. This can easily be integrated into a machine learning project to routinely update a **CSV**. All you need to do is update the content the `Nokogiri` object is looking for, just like any other scraper.
 
-## How to Use
+## How to Use 🔧
 
 1. Install the necessary gems:
     > These are the pre-built packages/libraries that have functionalities leveraged in this web scraper
@@ -69,7 +71,7 @@ This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks*
 
 3. Check the generated `output.csv` file for the scraped hyperlinks.
 
-## Sample Outputs
+## Sample Outputs 📊
 
 After running the scraper on a sample URL, your `output.csv` might look like this:
 
@@ -80,8 +82,9 @@ Index,Title,Link
 3,Newsletters,https://www.bbc.com/newsletters
 ```
 
-## Resources Used
+## Resources Used 📚 
 
+- [Ruby Docs](https://www.ruby-lang.org/en/documentation/): General Ruby docs (install, syntax, etc.).
 - [Nokogiri](https://nokogiri.org/index.html#parsing-and-querying): Web scraping parser.
 - [Gets Method](https://www.codecademy.com/resources/docs/ruby/user-input): How Ruby gets user input.
 - [Ruby CSV](https://ruby-doc.org/stdlib-2.6.1/libdoc/csv/rdoc/CSV.html): Ruby CSV documentation.
