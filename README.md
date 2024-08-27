@@ -11,7 +11,7 @@ Learning Ruby one step at a time...
 
 ## Overview 🌍
 
-This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks** from the given `URL`, and outputs them to a **CSV**. This can easily be integrated into a machine learning project to routinely update a **CSV**. All you need to do is update the content the `Nokogiri` object is looking for, just like any other scraper.
+This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks** from the given `URL`, and outputs them to a **CSV**. This can easily be integrated into a machine learning project to routinely update a **CSV**. All you need to do is update the content the `Nokogiri` `doc` object is looking for, just like any other scraper.
 
 ## How to Use 🔧
 
