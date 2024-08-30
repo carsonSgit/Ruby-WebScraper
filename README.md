@@ -32,7 +32,7 @@ This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks*
     puts "Please input the URL you want to scrape: "
 
     url = ARGV[0] || gets.chomp
-    output_file = ARGV[1] || 'output.csv'
+    output_file = ARGV[1] || 'scrapedData.csv'
 
     begin
     html = URI.open(url, "User-Agent" => "Mozilla/5.0")
@@ -69,11 +69,11 @@ This simple web scraper takes any user-inputted `URL`, scrapes all **hyperlinks*
    >> https://github.com/
    >> ```
 
-3. Check the generated `output.csv` file for the scraped hyperlinks.
+3. Check the generated `scrapedData.csv` file for the scraped hyperlinks.
 
 ## Sample Outputs 📊
 
-After running the scraper on a sample URL, your `output.csv` might look like this:
+After running the scraper on a sample URL, your `scrapedData.csv` might look like this:
 
 ```
 Index,Title,Link

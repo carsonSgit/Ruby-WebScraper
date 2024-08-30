@@ -6,7 +6,7 @@ require 'uri'
 puts "Please input the URL you want to scrape: "
 
 url = ARGV[0] || gets.chomp
-output_file = ARGV[1] || 'output.csv'
+output_file = ARGV[1] || 'scrapedData.csv'
 
 begin
   html = URI.open(url, "User-Agent" => "Mozilla/5.0")
